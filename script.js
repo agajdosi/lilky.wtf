@@ -4,7 +4,7 @@ document.getElementById("q2").style.display = "none"
 
 function next(ID) {  
   document.getElementById("q" + ID.toString()).style.display = "none"
-  document.getElementById("q" + (ID+1).toString()).style.display = "initial"
+  document.getElementById("q" + (ID+1).toString()).style.display = "block"
 
   return false
 }
