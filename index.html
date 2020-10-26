@@ -21,36 +21,39 @@
 <body>
 
 <form action="" name="q1" id="q1" onsubmit="return next(1)">
-  <label>Odpověď na otázku č. 1 je?</label>
-
+  <label class="question">I am rather</label>
+<div class="answers">
   <label class="radinput">
     <input class="radold" type="radio" value="A" name="q1" required>
     <span class="radnew"></span>
-    odpoved 1
+    early bird
   </label>
 
   <label class="radinput">
     <input class="radold" type="radio" value="B" name="q1">
     <span class="radnew"></span>
-    odpoved 2
+    night owl
   </label>
 
   <label class="radinput">
     <input class="radold" type="radio" value="C" name="q1">
     <span class="radnew"></span>
-    odpoved 3
+    early owl
   </label>
 
   <label class="radinput">
     <input class="radold" type="radio" value="D" name="q1">
     <span class="radnew"></span>
-    odpoved 4
+    night bird
   </label>
+</div>
   <input type="submit" value="submit">
 </form>
 
 <form action="" name="q2" id="q2" onsubmit="return next(2)">
-  <label>Odpověď na otázku č. 2 je?</label>
+  <div>
+    <label class="question">Odpověď na otázku č. 2 je?</label>
+  </div>
 
   <label class="radinput">
     <input class="radold" type="radio" value="A" name="q2" required>
