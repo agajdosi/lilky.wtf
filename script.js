@@ -1,3 +1,13 @@
+document.getElementById("q2").style.display = "none"
+
+
+
+function next(ID) {  
+  document.getElementById("q" + ID.toString()).style.display = "none"
+  document.getElementById("q" + (ID+1).toString()).style.display = "initial"
+
+  return false
+}
 
 function calculate() {
 
@@ -6,13 +16,12 @@ function calculate() {
   var answers = new Array()
   answers.push(document.forms.quiz.q1.value)
   answers.push(document.forms.quiz.q2.value)
-  answers.push(document.forms.quiz.q3.value)
-  answers.push(document.forms.quiz.q4.value)
-  answers.push(document.forms.quiz.q5.value)
+  //answers.push(document.forms.quiz.q3.value)
+  //answers.push(document.forms.quiz.q4.value)
+  //answers.push(document.forms.quiz.q5.value)
 
-  var results = frequent(answers) 
+  var results = frequent(answers)
 
-  console.log(results[0], results[1])
   if (results[0] == "A") {
     window.location.href = "https://www.youtube.com/embed/sGkh1W5cbH4?autoplay=1";
   }
