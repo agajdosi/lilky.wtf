@@ -14,13 +14,14 @@ function calculate() {
   console.log("calculating")
 
   var answers = new Array()
-  answers.push(document.forms.quiz.q1.value)
-  answers.push(document.forms.quiz.q2.value)
-  //answers.push(document.forms.quiz.q3.value)
-  //answers.push(document.forms.quiz.q4.value)
-  //answers.push(document.forms.quiz.q5.value)
+  answers.push(document.forms[0].q.value)
+  answers.push(document.forms[1].q.value)
+  answers.push(document.forms[2].q.value)
+
+  console.log(answers)
 
   var results = frequent(answers)
+  console.log(results)
 
   if (results[0] == "A") {
     window.location.href = "https://www.youtube.com/embed/sGkh1W5cbH4?autoplay=1";
