@@ -32,7 +32,8 @@ html {
 }
 
 form {
-  margin: 20vh auto 0 auto;
+  margin: 10vh auto 0 auto;
+  padding: 1em;
   max-width: 1200px;
 }
 
