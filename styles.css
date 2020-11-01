@@ -33,7 +33,7 @@ html {
 
 form {
   margin: 10vh auto 0 auto;
-  padding: 1em;
+  padding: 0 0.5em;
   max-width: 1200px;
 }
 
@@ -47,7 +47,7 @@ form {
 .answers {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .radinput:hover{
