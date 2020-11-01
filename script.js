@@ -1,4 +1,5 @@
 document.getElementById("q2").style.display = "none"
+document.getElementById("q3").style.display = "none"
 
 
 
