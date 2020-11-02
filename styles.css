@@ -61,8 +61,7 @@ form {
 }
 
 .radinput input[type="radio"]:checked + span {
-  background-color:#bfb;
-  border-color: #4c4;
+  background-image: url(img/radioTick.png);
 }
 
 .radnew{
