@@ -35,6 +35,11 @@ form {
   margin: 10vh auto 0 auto;
   padding: 0 0.5em;
   max-width: 1200px;
+  display: none;
+}
+
+#q1 {
+  display: block;
 }
 
 .question {
