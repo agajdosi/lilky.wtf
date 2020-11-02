@@ -50,6 +50,11 @@ form {
   justify-content: space-around;
 }
 
+.radinput {
+  display: flex;
+  align-items: center;
+}
+
 .radinput:hover{
   cursor: pointer;
 }
@@ -70,6 +75,7 @@ form {
   height: 1em;
   background-image: url(img/radio.png);
   background-size: cover;
+  margin: 0 0.15em 0 0.5em;
 }
 
 .subinput {
