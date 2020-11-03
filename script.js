@@ -15,13 +15,13 @@ function calculate() {
   if (results[0] == "A") {
     window.location.href = "https://www.youtube.com/embed/sGkh1W5cbH4?autoplay=1";
   }
-  if (results[0] == "B") {
+  if (results[0] == "W") {
     window.location.href = "https://www.youtube.com/embed/jkLRith2wcc?autoplay=1";
   }
-  if (results[0] == "C") {
+  if (results[0] == "E") {
     window.location.href = "https://www.youtube.com/embed/xNN7iTA57jM?autoplay=1";
   }
-  if (results[0] == "D") {
+  if (results[0] == "F") {
     window.location.href = "https://www.youtube.com/embed/L_LUpnjgPso?autoplay=1";
   }
 
