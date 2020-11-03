@@ -95,7 +95,7 @@ function closeFullscreen() {
 
 function hideQuiz() {
   document.getElementById('q8').style.display = 'none';
-  document.getElementsByClassName('elements')[0].style.display = 'none';
+  document.getElementById('elementalAnimation').style.display = 'none';
 }
 
 function showVideo(source) {

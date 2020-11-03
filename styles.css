@@ -108,13 +108,13 @@ form {
   height: 2em;
 }
 
-.elements {
+#elementalAnimation {
   display: flex;
   justify-content: space-around;
   margin: 2em auto;
 }
 
-.elements img {
+#elementalAnimation img {
   width: 30vh;
 }
 
