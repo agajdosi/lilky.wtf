@@ -18,13 +18,13 @@ function calculate() {
     showVideo('video/mov.mp4');
   }
   if (results[0] == "W") {
-    window.location.href = "https://www.youtube.com/embed/jkLRith2wcc?autoplay=1";
+    showVideo('video/mov.mp4');
   }
   if (results[0] == "E") {
-    window.location.href = "https://www.youtube.com/embed/xNN7iTA57jM?autoplay=1";
+    showVideo('video/mov.mp4');
   }
   if (results[0] == "F") {
-    window.location.href = "https://www.youtube.com/embed/L_LUpnjgPso?autoplay=1";
+    showVideo('video/mov.mp4');
   }
 
   return false
