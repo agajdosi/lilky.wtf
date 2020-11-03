@@ -11,9 +11,11 @@ function calculate() {
   answers.push(document.forms[1].q.value)
   answers.push(document.forms[2].q.value)
   var results = frequent(answers)
-  
+
+  showVideoBG();
+
   if (results[0] == "A") {
-    window.location.href = "https://www.youtube.com/embed/sGkh1W5cbH4?autoplay=1";
+    showVideo('video/mov.mp4');
   }
   if (results[0] == "W") {
     window.location.href = "https://www.youtube.com/embed/jkLRith2wcc?autoplay=1";
@@ -45,4 +47,51 @@ function frequent(arr) {
   }
 
   return [item, mf]
+}
+
+function openFullscreen(elem) {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+
+function showVideo(source) {
+  var video = document.getElementById('video');
+  video.style.display = "block";
+  video.style.width = "100%";
+  video.style.height = "auto";
+
+  var src = document.createElement('source');
+  src.setAttribute('src', source);
+  video.appendChild(src);
+
+  //video.onclick = openFullscreen;
+  video.play();
+  openFullscreen(video);
+}
+
+function hideVideo() {
+  var video = document.getElementById('video');
+  video.style.display = "none";
+  video.style.width = "0";
+  video.style.height = "0";
+  video.stop();
+}
+
+function showVideoBG() {
+  var videobg = document.getElementById('video-bg');
+  videobg.style.display = "block";
+  videobg.style.width = "100%";
+  videobg.style.height = "100%";
+}
+
+function hideVideoBG() {
+  var videobg = document.getElementById('video-bg');
+  videobg.style.display = "none";
+  videobg.style.width = "0";
+  videobg.style.height = "0";
 }

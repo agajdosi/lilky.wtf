@@ -117,3 +117,24 @@ form {
 .elements img {
   width: 30vh;
 }
+
+#video-bg {
+  width: 0;
+  height: 0;
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  background-color: rgba(25, 25, 25, 1);
+}
+
+#video {
+  width: 0;
+  max-width: 100%;
+  height: 0;
+  max-height: 100%;
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+}
