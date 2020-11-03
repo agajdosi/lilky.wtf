@@ -6,13 +6,21 @@ function next(ID) {
 }
 
 function calculate() {
-  var answers = new Array()
-  answers.push(document.forms[0].q.value)
-  answers.push(document.forms[1].q.value)
-  answers.push(document.forms[2].q.value)
+  var answers = new Array();
+  answers.push(document.forms[0].q.value);
+  answers.push(document.forms[1].q.value);
+  answers.push(document.forms[2].q.value);
+  answers.push(document.forms[3].q.value);
+  answers.push(document.forms[4].q.value);
+  answers.push(document.forms[5].q.value);
+  answers.push(document.forms[6].q.value)
+  answers.push(document.forms[7].q.value)
   var results = frequent(answers)
 
   showVideoBG();
+
+  console.log(answers)
+  console.log(results)
 
   if (results[0] == "A") {
     showVideo('video/mov.mp4');
