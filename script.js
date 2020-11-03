@@ -1,8 +1,8 @@
 function next(ID) {  
-  document.getElementById("q" + ID.toString()).style.display = "none"
-  document.getElementById("q" + (ID+1).toString()).style.display = "block"
+  document.getElementById("q" + ID.toString()).style.display = 'none';
+  document.getElementById("q" + (ID+1).toString()).style.display = 'block';
   
-  return false
+  return false;
 }
 
 function calculate() {
@@ -13,14 +13,15 @@ function calculate() {
   answers.push(document.forms[3].q.value);
   answers.push(document.forms[4].q.value);
   answers.push(document.forms[5].q.value);
-  answers.push(document.forms[6].q.value)
-  answers.push(document.forms[7].q.value)
-  var results = frequent(answers)
+  answers.push(document.forms[6].q.value);
+  answers.push(document.forms[7].q.value);
+  var results = frequent(answers);
 
   showVideoBG();
+  hideQuiz();
 
-  console.log(answers)
-  console.log(results)
+  console.log(answers);
+  console.log(results);
 
   if (results[0] == "A") {
     showVideo('video/mov.mp4');
@@ -39,6 +40,21 @@ function calculate() {
 }
 
 function frequent(arr) {
+  //handle answers containing 2 elements
+  console.log(arr);
+
+  for (var i=0; i<arr.length; i++){
+    if (arr[i] == 'EF'){
+      arr[i] = 'E';
+      arr.push('F');
+    } else if (arr[i] == 'AW'){
+      arr[i] == 'A';
+      arr.push('W');
+    }
+  }
+  console.log(arr);
+  
+  //count the most frequent element
   var mf = 1;
   var m = 0;
   var item;
@@ -67,19 +83,52 @@ function openFullscreen(elem) {
   }
 }
 
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
+} 
+
+function hideQuiz() {
+  document.getElementById('q8').style.display = 'none';
+  document.getElementsByClassName('elements')[0].style.display = 'none';
+}
+
 function showVideo(source) {
   var video = document.getElementById('video');
-  video.style.display = "block";
-  video.style.width = "100%";
-  video.style.height = "auto";
+  video.style.display = 'block';
+  video.style.width = '100%';
+  video.style.height = 'auto';
 
   var src = document.createElement('source');
   src.setAttribute('src', source);
   video.appendChild(src);
 
-  //video.onclick = openFullscreen;
-  video.play();
   openFullscreen(video);
+  startVideo();
+}
+
+function startVideo() {
+  var video = document.getElementById('video');
+  video.onended = hidePlayer;
+
+  video.play();
+}
+
+function hidePlayer() {
+  hideVideo();
+  hideVideoBG();
+  closeFullscreen();
+  //showElements();
+}
+
+function stopVideo() {
+  var video = document.getElementById('video');
+  video.stop();
 }
 
 function hideVideo() {
@@ -87,7 +136,10 @@ function hideVideo() {
   video.style.display = "none";
   video.style.width = "0";
   video.style.height = "0";
-  video.stop();
+
+  while (video.hasChildNodes()) {  
+    video.removeChild(video.firstChild);
+  }
 }
 
 function showVideoBG() {
