@@ -10,7 +10,7 @@ html, body {
 
 body{
   font-family: "Synetactile", sans-serif;
-  font-size: 3em;
+  font-size: 2em;
   color: rgba(255, 255, 255, 1);
 }
 
@@ -43,7 +43,7 @@ form {
 }
 
 .question {
-  font-size: 1.5em;
+  font-size: 1.4em;
   display: block;
   text-align: center;
   margin: 0 auto 1em auto;
