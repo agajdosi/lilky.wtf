@@ -17,7 +17,6 @@ function calculate() {
   answers.push(document.forms[7].q.value);
   var results = frequent(answers);
 
-  showVideoBG();
   hideQuiz();
 
   console.log(answers);
@@ -108,6 +107,8 @@ function showVideo(source) {
   src.setAttribute('src', source);
   video.appendChild(src);
 
+  showVideoBG();
+  hideElementsMenu();
   openFullscreen(video);
   startVideo();
 }
@@ -123,7 +124,19 @@ function hidePlayer() {
   hideVideo();
   hideVideoBG();
   closeFullscreen();
-  //showElements();
+  showElementsMenu();
+}
+
+function showElementsMenu() {
+  var em = document.getElementById("elementsMenu");
+  em.style.display = "block";
+  em.style.width = "100%";
+}
+
+function hideElementsMenu() {
+  var em = document.getElementById("elementsMenu");
+  em.style.display = "none";
+  em.style.width = "0";
 }
 
 function stopVideo() {

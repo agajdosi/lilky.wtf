@@ -20,7 +20,7 @@ html {
   background-repeat: no-repeat;
 }
 
-.bg {
+#bg {
   position: fixed;
   z-index: -10;
   top: 0;
@@ -116,6 +116,31 @@ form {
 
 #elementalAnimation img {
   width: 30vh;
+}
+
+#elementsMenu {
+  position: absolute;
+  display: none;
+  top: 20vh;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
+#elementsMenu div {
+  font-size: 1.4em;
+  text-align: center;
+  margin: 0 auto 2em auto;
+}
+
+#elementalIcons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#elementsMenu img {
+  max-width: 20vw;
 }
 
 #video-bg {
