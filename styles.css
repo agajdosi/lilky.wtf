@@ -144,6 +144,10 @@ form {
   align-items: center;
 }
 
+#elementalIcons img:hover {
+  cursor: pointer;
+}
+
 #elementsMenu img {
   max-width: 20vw;
 }
