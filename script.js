@@ -50,7 +50,7 @@ function frequent(arr) {
     }
   }
   console.log(arr);
-  
+
   //count the most frequent element
   var mf = 1;
   var m = 0;
@@ -104,19 +104,27 @@ function showVideo(source) {
   var src = document.createElement('source');
   src.setAttribute('src', source);
   video.appendChild(src);
-  video.load();
-
   showVideoBG();
+  video.load();
   hideElementsMenu();
   openFullscreen(video);
+  video.onended = hidePlayer;
+  video.click = hidePlayer;
   startVideo();
+}
+
+function startpause() {
+  var video = document.getElementById('video');
 }
 
 function startVideo() {
   var video = document.getElementById('video');
-  video.onended = hidePlayer;
-
   video.play();
+}
+
+function stopVideo() {
+  var video = document.getElementById('video');
+  video.stop();
 }
 
 function hidePlayer() {
@@ -136,11 +144,6 @@ function hideElementsMenu() {
   var em = document.getElementById("elementsMenu");
   em.style.display = "none";
   em.style.width = "0";
-}
-
-function stopVideo() {
-  var video = document.getElementById('video');
-  video.stop();
 }
 
 function hideVideo() {
@@ -167,3 +170,41 @@ function hideVideoBG() {
   videobg.style.width = "0";
   videobg.style.height = "0";
 }
+
+
+
+// COUNTDOWN
+var countDownDate = new Date("Nov 4, 2020 17:00:00").getTime();
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var ofset = new Date().getTimezoneOffset();
+  var utc = now + ofset*60000;
+  
+  console.log(now);
+  console.log(ofset);
+  console.log(utc);
+
+  var distance = countDownDate - utc;
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById('q1').style.display = 'block';
+    document.getElementById('elementalAnimation').style.display = 'flex';
+    document.getElementById('counter').style.display = 'none';
+    document.getElementById('counter').style.height = '0';
+    document.getElementById('counter').style.width = '0';
+    document.title = 'Lilky.wtf - elemental quiz';
+  } else {
+    document.getElementById('counter').style.display = 'block';
+    document.getElementById('counter').style.width = '100%';
+    document.title = 'Lilky.wtf - starting soon!';
+  }
+    
+  // Time calculations for days, hours, minutes and seconds
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById('time').innerHTML = hours + 'h '
+  + minutes + 'm ' + seconds + 's ';
+}, 1000);

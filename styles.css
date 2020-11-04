@@ -43,7 +43,7 @@ form {
 }
 
 #q1 {
-  display: block;
+  display: none;
 }
 
 .question {
@@ -114,7 +114,7 @@ form {
 }
 
 #elementalAnimation {
-  display: flex;
+  display: none;
   justify-content: space-around;
   margin: 2em auto;
 }
@@ -171,4 +171,22 @@ form {
   display: none;
   top: 0;
   left: 0;
+}
+
+#counter {
+  display: none;
+  position: absolute;
+  top: 20vh;
+  left: 0;
+  width: 0;
+  text-align: center;
+}
+
+#counter #time {
+  margin: 0 auto;
+  font-size: 2em;
+}
+
+#counter #info {
+  margin: 0 auto;
 }
