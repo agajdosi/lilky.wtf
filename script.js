@@ -26,13 +26,13 @@ function calculate() {
     showVideo('video/voda.mp4');
   }
   if (results[0] == "W") {
-    showVideo('video/voda.mp4');
+    showVideo('video/water.mp4');
   }
   if (results[0] == "E") {
-    showVideo('video/mov.mp4');
+    showVideo('video/earth.mp4');
   }
   if (results[0] == "F") {
-    showVideo('video/mov.mp4');
+    showVideo('video/fire.mp4');
   }
 
   return false
