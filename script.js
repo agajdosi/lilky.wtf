@@ -23,7 +23,7 @@ function calculate() {
   console.log(results);
 
   if (results[0] == "A") {
-    showVideo('http://amper.ped.muni.cz/~jonas/lilky/air.mov');
+    showVideo('http://amper.ped.muni.cz/~jonas/lilky/air.mp4');
   }
   if (results[0] == "W") {
     showVideo('http://amper.ped.muni.cz/~jonas/lilky/water.mp4');
