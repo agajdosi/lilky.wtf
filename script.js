@@ -23,10 +23,10 @@ function calculate() {
   console.log(results);
 
   if (results[0] == "A") {
-    showVideo('video/mov.mp4');
+    showVideo('video/voda.mp4');
   }
   if (results[0] == "W") {
-    showVideo('video/mov.mp4');
+    showVideo('video/voda.mp4');
   }
   if (results[0] == "E") {
     showVideo('video/mov.mp4');
@@ -40,8 +40,6 @@ function calculate() {
 
 function frequent(arr) {
   //handle answers containing 2 elements
-  console.log(arr);
-
   for (var i=0; i<arr.length; i++){
     if (arr[i] == 'EF'){
       arr[i] = 'E';
@@ -106,6 +104,7 @@ function showVideo(source) {
   var src = document.createElement('source');
   src.setAttribute('src', source);
   video.appendChild(src);
+  video.load();
 
   showVideoBG();
   hideElementsMenu();
