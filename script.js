@@ -23,7 +23,7 @@ function calculate() {
   console.log(results);
 
   if (results[0] == "A") {
-    showVideo('https://github.com/agajdosi/lilky.wtf/raw/master/video/air.mp4');
+    showVideo('https://github.com/agajdosi/lilky.wtf/raw/master/video/air.mov');
   }
   if (results[0] == "W") {
     showVideo('https://github.com/agajdosi/lilky.wtf/raw/master/video/water.mp4');
@@ -170,7 +170,7 @@ function hideVideoBG() {
 
 
 // COUNTDOWN
-var countDownDate = new Date("Nov 4, 2020 17:00:00").getTime();
+var countDownDate = new Date("Nov 4, 2020 17:15:00").getTime();
 var x = setInterval(function() {
   var now = new Date().getTime();
   var ofset = new Date().getTimezoneOffset();
