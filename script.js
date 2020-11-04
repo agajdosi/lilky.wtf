@@ -70,7 +70,8 @@ function frequent(arr) {
   return [item, mf]
 }
 
-function openFullscreen(elem) {
+function openFullscreen() {
+  var elem = document.getElementById('video-player');
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
   } else if (elem.webkitRequestFullscreen) { /* Safari */
@@ -107,14 +108,9 @@ function showVideo(source) {
   showVideoBG();
   video.load();
   hideElementsMenu();
-  openFullscreen(video);
+  openFullscreen();
   video.onended = hidePlayer;
-  video.click = hidePlayer;
   startVideo();
-}
-
-function startpause() {
-  var video = document.getElementById('video');
 }
 
 function startVideo() {

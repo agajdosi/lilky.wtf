@@ -162,6 +162,18 @@ form {
   background-color: rgba(25, 25, 25, 1);
 }
 
+#loading {
+  position: absolute;
+  top: 20vh;
+  width: 100%;
+  text-align: center;
+}
+
+#loading img {
+  position: relative;
+  width: 10vw;
+}
+
 #video {
   width: 0;
   max-width: 100%;
