@@ -23,16 +23,16 @@ function calculate() {
   console.log(results);
 
   if (results[0] == "A") {
-    showVideo('https://github.com/agajdosi/lilky.wtf/raw/master/video/air.mov');
+    showVideo('http://amper.ped.muni.cz/~jonas/lilky/air.mov');
   }
   if (results[0] == "W") {
-    showVideo('https://github.com/agajdosi/lilky.wtf/raw/master/video/water.mp4');
+    showVideo('http://amper.ped.muni.cz/~jonas/lilky/water.mp4');
   }
   if (results[0] == "E") {
-    showVideo('https://github.com/agajdosi/lilky.wtf/raw/master/video/earth.mp4');
+    showVideo('http://amper.ped.muni.cz/~jonas/lilky/earth.mp4');
   }
   if (results[0] == "F") {
-    showVideo('https://github.com/agajdosi/lilky.wtf/raw/master/video/fire.mp4');
+    showVideo('http://amper.ped.muni.cz/~jonas/lilky/fire.mp4');
   }
 
   return false
