@@ -70,27 +70,6 @@ function frequent(arr) {
   return [item, mf]
 }
 
-function openFullscreen() {
-  var elem = document.getElementById('video-player');
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
-}
-
-function closeFullscreen() {
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.webkitExitFullscreen) { /* Safari */
-    document.webkitExitFullscreen();
-  } else if (document.msExitFullscreen) { /* IE11 */
-    document.msExitFullscreen();
-  }
-} 
-
 function hideQuiz() {
   document.getElementById('q8').style.display = 'none';
   document.getElementById('elementalAnimation').style.display = 'none';
@@ -98,49 +77,48 @@ function hideQuiz() {
 
 function showVideo(element) {
   if (element == "A") {
-    var source = "https://dl.dropboxusercontent.com/s/6ujkuvoayl7n684/air.mp4";
+    var source = "ufq2xhyRIn8";
   }
   if (element == "E") {
-    var source = "https://dl.dropboxusercontent.com/s/sz16gj0td68kgny/earth.mp4";
+    var source = "Stn5LIUVQmA";
   }
   if (element == "F") {
-    var source = "https://dl.dropboxusercontent.com/s/khmc1iktpf821x3/fire.mp4";
+    var source = "xQ5LELJ-8XA";
   }
   if (element == "W") {
-    var source = "https://dl.dropboxusercontent.com/s/soxt0kelif90rdj/water.mp4";
+    var source = "xN9rK237oV4";
   }
 
   var video = document.getElementById('video');
   video.style.display = 'block';
   video.style.width = '100%';
-  video.style.height = 'auto';
+  video.style.height = '100%';
 
-  var src = document.createElement('source');
-  src.setAttribute('src', source);
-  video.appendChild(src);
-  showVideoBG();
-  video.load();
+  var player = new YT.Player('video', {
+    width: '640',
+    height: '390',
+    videoId: source,
+    events: {
+      onReady: onPlayerReady,
+      onStateChange: onPlayerStateChange
+    }
+  });
+
   hideElementsMenu();
-  openFullscreen();
-  video.onended = hidePlayer;
-  startVideo();
 }
 
-function startVideo() {
-  var video = document.getElementById('video');
-  video.play();
+function onPlayerReady(event) {
+  event.target.playVideo();
 }
 
-function stopVideo() {
-  var video = document.getElementById('video');
-  video.stop();
-}
-
-function hidePlayer() {
-  hideVideo();
-  hideVideoBG();
-  closeFullscreen();
-  showElementsMenu();
+function onPlayerStateChange(event) {        
+  if(event.data === 0) {          
+    var video = document.getElementById('video');
+    var div = document.createElement('div');
+    div.setAttribute('id', "video");
+    video.replaceWith(div);
+    showElementsMenu();
+  }
 }
 
 function showElementsMenu() {
@@ -155,43 +133,12 @@ function hideElementsMenu() {
   em.style.width = "0";
 }
 
-function hideVideo() {
-  var video = document.getElementById('video');
-  video.style.display = "none";
-  video.style.width = "0";
-  video.style.height = "0";
-
-  while (video.hasChildNodes()) {  
-    video.removeChild(video.firstChild);
-  }
-}
-
-function showVideoBG() {
-  var videobg = document.getElementById('video-bg');
-  videobg.style.display = "block";
-  videobg.style.width = "100%";
-  videobg.style.height = "100%";
-}
-
-function hideVideoBG() {
-  var videobg = document.getElementById('video-bg');
-  videobg.style.display = "none";
-  videobg.style.width = "0";
-  videobg.style.height = "0";
-}
-
-
-
 // COUNTDOWN
 var countDownDate = new Date("Nov 4, 2020 17:15:00").getTime();
 var x = setInterval(function() {
   var now = new Date().getTime();
   var ofset = new Date().getTimezoneOffset();
   var utc = now + ofset*60000;
-  
-  console.log(now);
-  console.log(ofset);
-  console.log(utc);
 
   var distance = countDownDate - utc;
   if (distance < 0) {
