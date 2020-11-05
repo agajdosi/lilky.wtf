@@ -109,6 +109,7 @@ function showVideo(element) {
 
 function onPlayerReady(event) {
   event.target.playVideo();
+  openFullscreen('video');
 }
 
 function onPlayerStateChange(event) {        
@@ -118,6 +119,17 @@ function onPlayerStateChange(event) {
     div.setAttribute('id', "video");
     video.replaceWith(div);
     showElementsMenu();
+  }
+}
+
+function openFullscreen(element) {
+  var elem = document.getElementById(element);
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
   }
 }
 
