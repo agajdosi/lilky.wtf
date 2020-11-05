@@ -23,16 +23,16 @@ function calculate() {
   console.log(results);
 
   if (results[0] == "A") {
-    showVideo('http://amper.ped.muni.cz/~jonas/lilky/air.mp4');
+    showVideo('A');
   }
   if (results[0] == "W") {
-    showVideo('http://amper.ped.muni.cz/~jonas/lilky/water.mp4');
+    showVideo('W');
   }
   if (results[0] == "E") {
-    showVideo('http://amper.ped.muni.cz/~jonas/lilky/earth.mp4');
+    showVideo('E');
   }
   if (results[0] == "F") {
-    showVideo('http://amper.ped.muni.cz/~jonas/lilky/fire.mp4');
+    showVideo('F');
   }
 
   return false
@@ -96,7 +96,20 @@ function hideQuiz() {
   document.getElementById('elementalAnimation').style.display = 'none';
 }
 
-function showVideo(source) {
+function showVideo(element) {
+  if (element == "A") {
+    var source = "https://animal.ffa.vutbr.cz/~xvgajdosik/VIDEOS/air.mp4";
+  }
+  if (element == "E") {
+    var source = "http://amper.ped.muni.cz/~jonas/lilky/earth.mp4";
+  }
+  if (element == "F") {
+    var source = "http://amper.ped.muni.cz/~jonas/lilky/fire.mp4";
+  }
+  if (element == "W") {
+    var source = "http://amper.ped.muni.cz/~jonas/lilky/water.mp4";
+  }
+
   var video = document.getElementById('video');
   video.style.display = 'block';
   video.style.width = '100%';
