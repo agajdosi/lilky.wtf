@@ -98,16 +98,16 @@ function hideQuiz() {
 
 function showVideo(element) {
   if (element == "A") {
-    var source = "https://animal.ffa.vutbr.cz/~xvgajdosik/VIDEOS/air.mp4";
+    var source = "https://dl.dropboxusercontent.com/s/6ujkuvoayl7n684/air.mp4";
   }
   if (element == "E") {
-    var source = "http://amper.ped.muni.cz/~jonas/lilky/earth.mp4";
+    var source = "https://dl.dropboxusercontent.com/s/sz16gj0td68kgny/earth.mp4";
   }
   if (element == "F") {
-    var source = "http://amper.ped.muni.cz/~jonas/lilky/fire.mp4";
+    var source = "https://dl.dropboxusercontent.com/s/khmc1iktpf821x3/fire.mp4";
   }
   if (element == "W") {
-    var source = "http://amper.ped.muni.cz/~jonas/lilky/water.mp4";
+    var source = "https://dl.dropboxusercontent.com/s/soxt0kelif90rdj/water.mp4";
   }
 
   var video = document.getElementById('video');
