@@ -77,7 +77,7 @@ function hideQuiz() {
 
 function showVideo(element) {
   if (element == "A") {
-    var source = "ufq2xhyRIn8";
+    var source = "4TZo0FL8SXY";
   }
   if (element == "E") {
     var source = "Stn5LIUVQmA";
@@ -86,7 +86,7 @@ function showVideo(element) {
     var source = "xQ5LELJ-8XA";
   }
   if (element == "W") {
-    var source = "xN9rK237oV4";
+    var source = "8FX5EILSbX4";
   }
 
   var video = document.getElementById('video');
